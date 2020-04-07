@@ -21,3 +21,5 @@ struts-plugin.xml
 	struts.devmode
 	
 * http://localhost:8080/MyStruts2/hello/test
+
+* if no method param in action, struts will use the execute method by default

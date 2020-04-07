@@ -13,4 +13,10 @@
 			<result name="success">/WEB-INF/hello/success.jsp</result>
 		</action>
 	</package>
+	<package name="book" extends="struts-default" namespace="/book">
+		<action name="*"
+			class="com.dlcreation.struts2test.action.BookAction" method="{1}">
+			<result name="success">/WEB-INF/book/{1}.jsp</result>
+		</action>
+	</package>
 </struts>
