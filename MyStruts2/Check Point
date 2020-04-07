@@ -1,0 +1,44 @@
+1. Initial
+1.1 Create a maven project and add code to .gitignore
+	*/target/**
+	/target/
+
+1.2 Generate web.xml, and add build properties to pom.xml, and add Struts 1, JUnit, Servlet to dependencies. 
+	<properties>
+		<servlet.version>3.1.0</servlet.version>
+		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+		<struts2-version>2.3.33</struts2-version>
+		<junit.version>4.12</junit.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>${struts2-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+	</dependencies>
