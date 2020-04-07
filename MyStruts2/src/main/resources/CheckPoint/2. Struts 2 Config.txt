@@ -1,0 +1,21 @@
+1. Add Filter properties to web.xml
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+2. Create struts.xml in resources folder, and create mapping for test
+
+*Config file:
+default.properties
+struts-default.xml
+struts-plugin.xml
+
+* To change the suffix: 
+	struts.action.extension
+* To change dev mode:
+	struts.devmode
