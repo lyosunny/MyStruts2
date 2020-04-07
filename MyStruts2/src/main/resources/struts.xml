@@ -6,7 +6,14 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 
-	<package name="p1" extends="struts-default" namespace="/hello">
+	<package name="home" extends="struts-default" namespace="/">
+		<action name="*"
+			class="com.dlcreation.struts2test.action.HomeAction" method="{1}">
+			<result name="success">/WEB-INF/{1}/{1}Home.jsp</result>
+		</action>
+	</package>
+	<package name="hello" extends="struts-default"
+		namespace="/hello">
 		<action name="test"
 			class="com.dlcreation.struts2test.action.HelloAction"
 			method="sayHello">
@@ -17,6 +24,50 @@
 		<action name="*"
 			class="com.dlcreation.struts2test.action.BookAction" method="{1}">
 			<result name="success">/WEB-INF/book/{1}.jsp</result>
+		</action>
+	</package>
+	<package name="student" extends="struts-default"
+		namespace="/student">
+		<action name="action1"
+			class="com.dlcreation.struts2test.action.StudentAction">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">book</param>
+			</result>
+		</action>
+		<action name="action2"
+			class="com.dlcreation.struts2test.action.StudentAction">
+			<result name="success">/WEB-INF/student/studentHome.jsp</result>
+		</action>
+	</package>
+	<package name="test" extends="struts-default" namespace="/test">
+		<action name="dispatcher"
+			class="com.dlcreation.struts2test.action.TestAction"
+			method="testDispatcher">
+			<result name="success" type="dispatcher">
+				/WEB-INF/student/studentHome.jsp
+			</result>
+		</action>
+		<action name="redirect"
+			class="com.dlcreation.struts2test.action.TestAction"
+			method="testRedirect">
+			<result name="success" type="redirect">
+				/WEB-INF/student/studentHome.jsp
+			</result>
+		</action>
+		<action name="chain"
+			class="com.dlcreation.struts2test.action.TestAction"
+			method="testChain">
+			<result name="success" type="chain">
+				<param name="namespace">/</param>
+				<param name="actionname">book</param>
+			</result>
+		</action>
+		<action name="redirectAction"
+			class="com.dlcreation.struts2test.action.TestAction"
+			method="testRedirectAction">
+			<result name="success" type="redirectAction">chain
+			</result>
 		</action>
 	</package>
 </struts>
