@@ -19,3 +19,5 @@ struts-plugin.xml
 	struts.action.extension
 * To change dev mode:
 	struts.devmode
+	
+* http://localhost:8080/MyStruts2/hello/test
