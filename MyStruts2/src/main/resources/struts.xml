@@ -69,5 +69,14 @@
 			<result name="success" type="redirectAction">chain
 			</result>
 		</action>
+		<action name="action1"
+			class="com.dlcreation.struts2test.action.TestAction"
+			method="doAction1">
+		</action>
+		<action name="action2"
+			class="com.dlcreation.struts2test.action.TestAction"
+			method="doAction2">
+		</action>
+
 	</package>
 </struts>
